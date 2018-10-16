@@ -5,7 +5,7 @@ class Node(object):
     def __init__(self, data):
         self.data = data;
         self.leftChild = None;
-        self.rightChild = Node;
+        self.rightChild = None;
         
     def insert(self, data):
         if data < self.data:
@@ -36,7 +36,7 @@ class Node(object):
                 else:
                     tempNode = self.rightChild;
                     
-                parentNode = self.rightChild;
+                parentNode.leftChild = tempNode;
             
             elif parentNode.rightChild == self:
                 if self.leftChild is not None:
